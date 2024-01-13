@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 1100px;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(65deg, #87ceeb 50%, #e4e9fd 50%);
+  font-family: "helvetica neue";
+}
+
+#navbarSupportedContent ul li a {
+  color: #87ceeb;
+  padding: 20px 20px;
+}
+
+#navbarSupportedContent ul li a i {
+  margin-right: 15px;
+}
+
+.task-container {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.task-option {
+  display: flex;
+  align-items: flex-end;
+}
+
+.to-do-card {
+  height: fit-content;
+  box-shadow: 3px 3px 7px hsl(217, 12%, 63%, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+  max-width: 400px;
+  min-width: 350px;
+  background-color: #ffffff;
+}
+
+.date-task-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Add this line */
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+
+.date-card {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+}
+
+.day {
+  font-size: 30px;
+  margin-right: 5px;
+  font-weight: bold lighter;
+}
+
+.month-year {
+  display: flex;
+  flex-direction: column;
+}
+
+.month-year .month {
+  font-weight: bold;
+}
+
+.task-card {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.task-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #30cfd0;
+  border-radius: 5px;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.task-checkbox:before {
+  content: "";
+  background-color: #30cfd0;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.task-checkbox:checked:before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.task-checkbox-label {
+  font-size: 18px;
+  color: #000000;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  color: #87ceeb;
+  border: 2px solid #87ceeb;
+  border-radius: 10px;
+  padding: 10px 25px;
+  background: transparent;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:active {
+  box-shadow: 2px 2px 15px #87ceeb inset;
+}
+
+.add {
+  width: 50px;
+  border: 0;
+  border-radius: 50%;
+  height: 50px;
+  position: absolute;
+  left: 50%; /* Align the left edge of the button to the center of the parent */
+  transform: translateX(
+    -50%
+  ); /* Move the button back by half of its width to center it */
+  bottom: -25px; /* Adjust as needed */
+  font-weight: lighter;
+  text-align: center; /* Center the text horizontally */
+  line-height: 50px;
+}
+
+.task-option a:nth-of-type(1) {
+  margin-right: 10px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.task-option a {
+  color: #87ceeb;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  padding: 20px 20px;
+  position: relative;
+}
+
+.task-checkbox:checked + .task-checkbox-label {
+  text-decoration: line-through;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Align the left edge of the button to the center of the parent */
+  transform: translateX(-50%);
+}
