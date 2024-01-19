@@ -24,11 +24,11 @@
 
       <% if (locals.todayTaskList) { %>
         <!-- Content to display when taskList exists -->
-        <% for(let index = 0; index < todayList.length; index++) { %>
+        <% for(let index = 0; index < todayTaskList.length; index++) { %>
             <div class="task-card">
                 <input type="checkbox" class="task-checkbox" />
                 <label class="task-checkbox-label">       
-                    <%= todayList[index] %>
+                    <%= todayTaskList[index].task %>
                 </label> 
             </div>
         <% } %>

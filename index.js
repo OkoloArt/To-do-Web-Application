@@ -1,33 +1,19 @@
+// The index file can be viewed in the same way as the viewModel in Android
+
 import express from "express";
-import bodyParser from "body-parser";
+import mongoose from "mongoose";
+import taskRoute from "./routes/TaskRouter.js";
+
+mongoose.connect("mongodb://localhost:27017/todoDb");
 
 const app = express();
 const port = 3000;
 
-const todayTodo = [];
-const workTodo = [];
-
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get("/", (req, res) => {
-  res.render("index.ejs", { todayTaskList: todayTodo });
-});
-
-app.get("/work", (req, res) => {
-  res.render("work.ejs", { workList: workTodo });
-});
-
-app.post("/todaySubmit", (req, res) => {
-  todayTodo.push(req.body["task"]);
-  res.redirect("/");
-});
-
-app.post("/workSubmit", (req, res) => {
-  workTodo.push(req.body["task"]);
-  res.redirect("/work");
-});
+app.use(express.urlencoded({ extended: true }));
+app.use(taskRoute);
+app.use("/work", taskRoute);
 
 app.listen(port, () => {
-  console.log(`Server Listening Port Is: ${port}`);
+  console.log(`Server Listening Port is: ${port}`);
 });
